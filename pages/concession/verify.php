@@ -3,6 +3,8 @@
 
             
 $index='href="../../index.php"';
+$logout='href="../../logout.php"';
+$img='src="../../dist/img/user2-160x160.jpg"';
 
 
 //   -----------------------------------------------------------------//
@@ -45,8 +47,13 @@ $tender_href='href="../../pages/notices/tender.php"';
 $feedback_href='href="../../pages/feedback/graph.php"';
 $feedback='class="treeview"';
 $feed= 'class=""';
-
+$TT_href='href="../../pages/curr/TT.php"';
+$TT= 'class=""';
+$qs_href='href="../../pages/curr/qs.php"';
+$qs= 'class=""';
 session_start();
+if (isset($_SESSION['user_id'])) {
+  // logged in
 
 
 ?>
@@ -437,3 +444,9 @@ include "../../footer.php"
 </script>
 </body>
 </html>
+<?php
+} else {
+  header('Location: http://localhost/Admin/login.php');
+}
+
+?>

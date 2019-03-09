@@ -1,28 +1,39 @@
 
-
 <?php
 
+if(isset($_POST['upload'])){
 
 
-session_start(); 
+    // $target = "./pdf/ansari".basename($_FILES['filename']['name']);
 
-// Create connection
-$conn = mysqli_connect('localhost', 'root', '','gpm');
-$filter=mysqli_query($conn,"select teacher from teacher");
+    $db = mysqli_connect("localhost","root","","GPM");
+    // $filename = $_FILES['filename']['name'];
+    $name = $_POST['name'];
+    $sem = $_POST['sem'];
+    $dept = $_POST['dept'];
+  $file="p16".$dept.$sem."qs";
 
-$teacher = ""; 
-if(isset($_SESSION['teacher'])){
-    $teacher = $_SESSION['teacher'];
-    echo $teacher;
-    // $query = "SELECT question , answer FROM answer  where teacher='$teacher' GROUP BY question";  
-    $query = "SELECT question , avg( answer ) as avg_ans FROM answer where teacher='$teacher'  GROUP BY question";  
+    $target = "../../../GPM/qs_pdf/".$file.".pdf";
 
-$result = mysqli_query($conn, $query);  
-}
-   
+
+    $sql = "INSERT INTO qs (name,dept,sem,filename) VALUES ('$name','$dept','$sem','$file')";
+
+    mysqli_query($db,$sql);
+    // move_uploaded_file($_FILES['image']['tmp_name'],$target);
+    if(move_uploaded_file($_FILES['filename']['tmp_name'],$target)){
+      $msg = "image uploaded";
+    }
+
+    else{
+      $msg = "failed";
+    }
+    // header("refresh:2; url=principal_desk.php")
+
+
+  }
 $index='href="../../index.php"';
-
 $logout='href="../../logout.php"';
+
 $img='src="../../dist/img/user2-160x160.jpg"';
 
 //   -----------------------------------------------------------------//
@@ -38,7 +49,7 @@ $home = 'class=""'; // home
 $cons = 'class="treeview "'; //about us
 $admin= 'class=""';
 
-$student = 'class="treeview "'; //about us
+$student = 'class="treeview active"'; //about us
 $curr= 'class=""';
 
 $notice= 'class="treeview "';
@@ -47,7 +58,7 @@ $ln= 'class=""';
 $sc= 'class=""';
 $cep= 'class=""';
 $tender= 'class=""';
-$graph='class=""';
+
 //   -----------------------------------------------------------------//
 
 
@@ -60,52 +71,26 @@ $admin_href='href="../../pages/concession/admin.php"'; //about us
 $curr_href='href="../../pages/curr/curr.php"'; //about us
 
 $ln_href='href="../../pages/notices/ln.php"';
+$sc_href='href="../../pages/notices/sc.php"';
+$cep_href='href="../../pages/notices/cep.php"';
+$tender_href='href="../../pages/notices/tender.php"';
 
 $feedback_href='href="../../pages/feedback/graph.php"';
-$feedback='class="treeview active"';
-$feed= 'class="active"';
-
+$feedback='class="treeview"';
+$feed= 'class=""';
 $TT_href='href="../../pages/curr/TT.php"';
 $TT= 'class=""';
 $qs_href='href="../../pages/curr/qs.php"';
-$qs= 'class=""';
+$qs= 'class="active"';
+session_start();
 if (isset($_SESSION['user_id'])) {
   // logged in
+
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawVisualization);
-
-      function drawVisualization() {
-        // Some raw data (not necessarily accurate)
-        var data = google.visualization.arrayToDataTable([
-          ['question','Answer'],
-          <?php  
-                          while($row = mysqli_fetch_array($result))  
-                          {  
-                               echo "['".$row["question"]."', ".$row["avg_ans"]."],";  
-                          }  
-                          ?>  
-                          
-        ]);
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-      }
-    </script> 
-           
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin GPM | Dashboard</title>
@@ -223,31 +208,71 @@ include "../../header.php"
         <div class="box box-primary">
            
 
-            <form method="POST" name="submitSear" id="submitSear" action="graph.php" enctype="multipart/form-data" >
+            <form method="POST" name="submitSear" id="submitSear" action="qs.php" enctype="multipart/form-data" >
             <div class="box-body">
 
-    
-            <div style="width:900px;">  
-                <!-- <h3 align="center">Make Simple Pie Chart by Google Chart API with PHP Mysql</h3>   -->
-                <br />  
-                <div id="chart_div" style="width: 900px; height: 500px;"></div>  
-           </div>  
-           
-                
 
-  
-           
+
+              <div class="form-group">
+                  <label>name</label>
+                  <input type="text" class="form-control" name="name" placeholder="name ...">
+                </div>
+      
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>Department</label>
+                  <select name="dept">
+<option   value="ce">Civil Engineering </option>
+                                    <option   value="co" >Computer Engineering</option>
+                                    <option   value="ee"> Electrical Engineering</option>
+                                    <option   value="ec"> Electronics Engineering</option>
+                                    <option   value="it" >Information Technology</option>
+                                    <option   value="is">Instrumentation Engineering </option>
+                                    <option   value="rb"> Rubber Technology</option>
+                                    <option   value="lt">Leather Technology </option>
+                                    <option   value="me">Mechanical Engineering </option>
+</select>                </div>                
+                
+<div class="form-group">
+                  <label>Semester</label>
+                  <select name="sem">
+<option   value="s1">Semester1 </option>
+<option   value="s2">Semester2 </option>
+<option   value="s3">Semester3 </option>
+<option   value="s4">Semester4 </option>
+<option   value="s5">Semester5 </option>
+<option   value="s6">Semester6 </option>
+
+</select>                </div>    
+                <div class="form-group">
+                  <label for="exampleInputFile">Filename</label>
+                  <input type="file" id="exampleInputFile" name ="filename">
+
+                </div>
+
                 
               
              
               </div>
               <!-- /.box-body -->
 
-                     
+              <div class="box-footer">
+                <button type="submit" name="upload" class="btn btn-primary">Submit</button>
+              </div>          
            </form>
            <!-- /.box-header -->
            <!-- form start -->
-          
+           <div class="box-body" >
+                
+           <div class="form-group">
+
+           <div id="grid_table_vission">
+           </div>
+
+           
+         </div>
+
+        </div>
 
        <!-- <div class="box-body" >
        <div class="form-group">
@@ -303,28 +328,28 @@ include "../../footer.php"
    loadData: function(filter){
     return $.ajax({
      type: "GET",
-     url: "fetch_data.php",
+     url: "fetch_qs.php",
      data: filter
     });
    },
    insertItem: function(item){
     return $.ajax({
      type: "POST",
-     url: "fetch_data.php",
+     url: "fetch_qs.php",
      data:item
     });
    },
    updateItem: function(item){
     return $.ajax({
      type: "PUT",
-     url: "fetch_data.php",
+     url: "fetch_qs.php",
      data: item
     });
    },
    deleteItem: function(item){
     return $.ajax({
      type: "DELETE",
-     url: "fetch_data.php",
+     url: "fetch_qs.php",
      data: item
     });
    },
@@ -338,17 +363,23 @@ include "../../footer.php"
  css: ''
    },
    {
-    name: "name",
- type: "text",
- css: ''
-   },
-   {
-    name: "link", 
+    name: "name", 
  type: "text", 
  width: 150, 
  validate: "required"
    },
-   
+   {
+    name: "dept", 
+ type: "text", 
+ width: 150, 
+ validate: "required"
+   },
+   {
+    name: "sem", 
+ type: "text", 
+ width: 150, 
+ validate: "required"
+   },
    {
     name: "filename", 
  type: "text", 
@@ -365,6 +396,7 @@ include "../../footer.php"
  });
 
 </script>
+
 
 
 <!-- <script>

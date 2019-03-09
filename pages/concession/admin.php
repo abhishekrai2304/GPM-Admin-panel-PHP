@@ -3,6 +3,8 @@
 
             
 $index='href="../../index.php"';
+$logout='href="../../logout.php"';
+$img='src="../../dist/img/user2-160x160.jpg"';
 
 
 //   -----------------------------------------------------------------//
@@ -42,8 +44,15 @@ $feedback_href='href="../../pages/feedback/graph.php"';
 $feedback='class="treeview"';
 $feed= 'class=""';
 
+$TT_href='href="../../pages/curr/TT.php"';
+$TT= 'class=""';
+$qs_href='href="../../pages/curr/qs.php"';
+$qs= 'class=""';
 
 session_start();
+
+if (isset($_SESSION['user_id'])) {
+  // logged in
 
 
 ?>
@@ -123,7 +132,10 @@ session_start();
      display:none;
   }
 
-
+  .jsgrid-grid-header,
+.jsgrid-grid-body{
+  overflow: auto;
+}
 
   </style>
 </head>
@@ -159,7 +171,7 @@ include "../../header.php"
 <div class="row">
 
   <!-- /.col -->
-  <div class="col-md-9">
+  <div  class="col-md-29">
     <div class="nav-tabs-custom">
      
       <div class="tab-content">
@@ -192,7 +204,7 @@ include "../../header.php"
                 </div>        
            <div class="form-group">
 
-           <div id="grid_table_vission">
+           <div id="jsgrid">
            </div>
 
            
@@ -206,7 +218,13 @@ include "../../header.php"
                 </div> 
 <div class="form-group">
 
-<div id="grid_cons_verify">
+<div style="position: relative; 
+  margin: 0em; 
+  padding:0; 
+  overflow-x:visible; 
+  overflow-y:auto; 
+  text-align:left;
+  " id="grid_cons_verify">
 </div>
 
 
@@ -235,7 +253,7 @@ include "../../footer.php"
 
 <script>
  
- $('#grid_table_vission').jsGrid({
+ $('#jsgrid').jsGrid({
 
   width: "100%",
   height: "600px",
@@ -297,7 +315,7 @@ include "../../footer.php"
    {
     name: "email", 
  type: "text", 
- width: 150, 
+ width: 180, 
  validate: "required"
    },
    {
@@ -325,7 +343,8 @@ include "../../footer.php"
  width: 150, 
  validate: "required"
  
-   }, {
+   }, 
+   {
     name: "shift", 
  type: "text", 
  width: 150, 
@@ -343,7 +362,8 @@ include "../../footer.php"
  width: 150, 
  validate: "required"
  
-   }, {
+   },
+    {
     name: "gender", 
  type: "text", 
  width: 150, 
@@ -355,7 +375,8 @@ include "../../footer.php"
  width: 150, 
  validate: "required"
  
-   }, {
+   }, 
+   {
     name: "fromC", 
  type: "text", 
  width: 150, 
@@ -368,7 +389,8 @@ include "../../footer.php"
  width: 150, 
  validate: "required"
  
-   }, {
+   }, 
+   {
     name: "clas", 
  type: "text", 
  width: 150, 
@@ -469,7 +491,7 @@ include "../../footer.php"
    {
     name: "email", 
  type: "text", 
- width: 150, 
+ width: 180, 
  validate: "required"
    },
    {
@@ -711,3 +733,9 @@ include "../../footer.php"
 </script>
 </body>
 </html>
+<?php
+} else {
+  header('Location: http://localhost/Admin/login.php');
+}
+
+?>

@@ -1,7 +1,7 @@
 <?php
-       
+       $img='src="dist/img/user2-160x160.jpg"';
        $index='href="index.php"';
-
+$logout='href="logout.php"';
 
        //   -----------------------------------------------------------------//
        
@@ -40,7 +40,19 @@
        $feedback_href='href="pages/feedback/graph.php"';
 $feedback='class="treeview"';
 $feed= 'class=""';
+$TT_href='href="pages/curr/TT.php"';
+$TT= 'class=""';
+$qs_href='href="pages/curr/qs.php"';
+$qs= 'class=""';
 
+$db = mysqli_connect("localhost","root","","GPM");
+
+
+
+session_start();
+if (isset($_SESSION['user_id'])) {
+  // logged in
+  
 ?>
 
 <!DOCTYPE html>
@@ -114,14 +126,22 @@ include "header.php"
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3><?php
+              
+              $sql = "SELECT COUNT(id) as ans FROM concession";
+ 
+              $result= mysqli_query($db,$sql);
+              while($row = mysqli_fetch_array($result))  
+                                       {  
+                                            echo $row["ans"];
+                                       }  
+              ?></h3>
 
-              <p>New Orders</p>
+              <p>concession</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -129,14 +149,21 @@ include "header.php"
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Bounce Rate</p>
+            <h3><?php
+              
+              $sql = "SELECT COUNT(id) as ans FROM answer";
+ 
+              $result= mysqli_query($db,$sql);
+              while($row = mysqli_fetch_array($result))  
+                                       {  
+                                            echo $row["ans"];
+                                       }  
+              ?></h3>
+              <p>Feedback</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -144,14 +171,21 @@ include "header.php"
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
+            <h3><?php
+              
+              $sql = "SELECT COUNT(id) as ans FROM register";
+ 
+              $result= mysqli_query($db,$sql);
+              while($row = mysqli_fetch_array($result))  
+                                       {  
+                                            echo $row["ans"];
+                                       }  
+              ?></h3>
+              <p>Student Registrations</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -159,14 +193,21 @@ include "header.php"
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
+            <h3><?php
+              
+              $sql = "SELECT COUNT(id) as ans FROM ln";
+ 
+              $result= mysqli_query($db,$sql);
+              while($row = mysqli_fetch_array($result))  
+                                       {  
+                                            echo $row["ans"];
+                                       }  
+              ?></h3>
+              <p>Notices</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -175,7 +216,27 @@ include "header.php"
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+            <h3><?php
+              
+              $sql = "SELECT COUNT(id) as ans FROM admin";
  
+              $result= mysqli_query($db,$sql);
+              while($row = mysqli_fetch_array($result))  
+                                       {  
+                                            echo $row["ans"];
+                                       }  
+              ?></h3>
+              <p>Administrator Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+          </div>
+        </div>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
        
@@ -236,3 +297,9 @@ include "footer.php"
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+<?php
+} else {
+  header('Location: http://localhost/Admin/login.php');
+}
+
+?>
