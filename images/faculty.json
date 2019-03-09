@@ -1,0 +1,292 @@
+{
+  "facultyinfo": [
+    {
+      "id": "13",
+      "faculty_name": "Kishor U. Dawane",
+      "department": "INSTRUMENTATION ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/INSTRUMENTATION-ENGINEERING/instr1518597972.jpg",
+      "ext_no": "285"
+    },
+    {
+      "id": "11",
+      "faculty_name": "Uday Bhausaheb Shinde",
+      "department": "INSTRUMENTATION ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/INSTRUMENTATION-ENGINEERING/instr1518597333.jpg",
+      "ext_no": "282"
+    },
+    {
+      "id": "12",
+      "faculty_name": "Shivaji Govind Thube",
+      "department": "INSTRUMENTATION ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/INSTRUMENTATION-ENGINEERING/instr1518597680.jpg",
+      "ext_no": "284"
+    },
+    {
+      "id": "9",
+      "faculty_name": "Dr. R. A. Patil",
+      "department": "INFORMATION TECHNOLOGY",
+      "designation": "I/C Head Of Department",
+      "photo_path": "../IMAGES/Faculty/INFORMATION-TECHNOLOGY/infor1518166696.jpg",
+      "ext_no": "277"
+    },
+    {
+      "id": "14",
+      "faculty_name": "Kavita U Waghmare",
+      "department": "INSTRUMENTATION ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/INSTRUMENTATION-ENGINEERING/instr1518598281.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "15",
+      "faculty_name": "Vaishali K Pawar",
+      "department": "INSTRUMENTATION ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/INSTRUMENTATION-ENGINEERING/instr1518598379.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "16",
+      "faculty_name": "Ashwini S Salunkhe",
+      "department": "SCIENCE AND HUMANITIES",
+      "designation": "Lecturer In Maths",
+      "photo_path": "../IMAGES/Faculty/SCIENCE-AND-HUMANITIES/scien1518600197.jpg",
+      "ext_no": "251"
+    },
+    {
+      "id": "17",
+      "faculty_name": "Jyoti Ratnani",
+      "department": "SCIENCE AND HUMANITIES",
+      "designation": "Lecturer In Mathematics",
+      "photo_path": "../IMAGES/Faculty/SCIENCE-AND-HUMANITIES/scien1518600464.jpg",
+      "ext_no": "251"
+    },
+    {
+      "id": "18",
+      "faculty_name": "Mrs. S. S. Chavan",
+      "department": "CIVIL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/CIVIL-ENGINEERING/civil1518600779.jpg",
+      "ext_no": "260"
+    },
+    {
+      "id": "19",
+      "faculty_name": "Dinkar K Fad",
+      "department": "CIVIL ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/CIVIL-ENGINEERING/civil1518600875.jpg",
+      "ext_no": "259"
+    },
+    {
+      "id": "20",
+      "faculty_name": "Meera Deshmukh (Ansarwadekar)",
+      "department": "CIVIL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/CIVIL-ENGINEERING/civil1518601245.jpg",
+      "ext_no": "259"
+    },
+    {
+      "id": "21",
+      "faculty_name": "Dinesh Haribhau Kamble",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "HOD",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518602026.jpg",
+      "ext_no": "230"
+    },
+    {
+      "id": "22",
+      "faculty_name": "Francis B Carwalo",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Gen. Mech. Instructor",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518602582.jpg",
+      "ext_no": "229"
+    },
+    {
+      "id": "23",
+      "faculty_name": "Sunil V Joshi",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518602674.jpg",
+      "ext_no": "224"
+    },
+    {
+      "id": "24",
+      "faculty_name": "Dhembare Ekalavya Chandrakant",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518602761.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "25",
+      "faculty_name": "Rajendra Baraskar",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Technical Lab Assistant",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518602839.jpg",
+      "ext_no": "231"
+    },
+    {
+      "id": "26",
+      "faculty_name": "N N Ansari",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518603104.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "27",
+      "faculty_name": "Kiran Dhangare",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518603309.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "28",
+      "faculty_name": "Dr. S. B. Mahagaonkar",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer - Selection Grade",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518603595.jpg",
+      "ext_no": "232"
+    },
+    {
+      "id": "29",
+      "faculty_name": "Anand Kurumbhate",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Senior Lecturer",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518676862.jpg",
+      "ext_no": "229"
+    },
+    {
+      "id": "30",
+      "faculty_name": "Prakash P Chaudhari",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518676990.jpg",
+      "ext_no": "229"
+    },
+    {
+      "id": "31",
+      "faculty_name": "Tushar K Khare",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Pump Attendant",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518677199.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "32",
+      "faculty_name": "Pravin Gunvare",
+      "department": "MECHANICAL ENGINEERING",
+      "designation": "Instructor (Technical)",
+      "photo_path": "../IMAGES/Faculty/MECHANICAL-ENGINEERING/mecha1518677668.jpg",
+      "ext_no": "258"
+    },
+    {
+      "id": "33",
+      "faculty_name": "S B Vishwarupe",
+      "department": "ELECTRICAL ENGINEERING",
+      "designation": "H O D",
+      "photo_path": "../IMAGES/Faculty/ELECTRICAL-ENGINEERING/elect1518678911.jpg",
+      "ext_no": "257"
+    },
+    {
+      "id": "34",
+      "faculty_name": "A P Marbhal",
+      "department": "ELECTRICAL ENGINEERING",
+      "designation": "Instructor (Technical)",
+      "photo_path": "../IMAGES/Faculty/ELECTRICAL-ENGINEERING/elect1518678089.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "35",
+      "faculty_name": "V U Bhosle",
+      "department": "ELECTRICAL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRICAL-ENGINEERING/elect1518679719.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "36",
+      "faculty_name": "Dr. N S Narkhede",
+      "department": "ELECTRICAL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRICAL-ENGINEERING/elect1518679807.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "37",
+      "faculty_name": "A K Dhulshette",
+      "department": "ELECTRICAL ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRICAL-ENGINEERING/elect1518679876.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "38",
+      "faculty_name": "S R Kasture",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Incharge H.O.D",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518686754.jpg",
+      "ext_no": "266"
+    },
+    {
+      "id": "40",
+      "faculty_name": "E. M. Chaudhari",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "H.O.D.",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518685523.jpg",
+      "ext_no": "267"
+    },
+    {
+      "id": "41",
+      "faculty_name": "S H Sisodiya",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518685742.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "42",
+      "faculty_name": "T K Balsaraf",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518685843.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "43",
+      "faculty_name": "Anagha Aghav",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518686121.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "44",
+      "faculty_name": "Dr. Hemant Pardeshi",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Senior Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518686889.jpg",
+      "ext_no": "267"
+    },
+    {
+      "id": "45",
+      "faculty_name": "Pritam A. Khande",
+      "department": "ELECTRONICS ENGINEERING",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/ELECTRONICS-ENGINEERING/elect1518687022.jpg",
+      "ext_no": "0"
+    },
+    {
+      "id": "46",
+      "faculty_name": "Namrata A. Wankhade",
+      "department": "INFORMATION TECHNOLOGY",
+      "designation": "Lecturer",
+      "photo_path": "../IMAGES/Faculty/INFORMATION-TECHNOLOGY/infor1523340050.jpg",
+      "ext_no": "0"
+    }
+  ]
+}
