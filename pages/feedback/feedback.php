@@ -5,7 +5,7 @@
 
 
 session_start(); 
-
+$teacherName = '';
 // Create connection
 $conn = mysqli_connect('localhost', 'root', '','gpm');
 $filter=mysqli_query($conn,"select teacher from teacher");
@@ -13,7 +13,8 @@ $filter=mysqli_query($conn,"select teacher from teacher");
 $teacher = ""; 
 if(isset($_SESSION['teacher'])){
     $teacher = $_SESSION['teacher'];
-    echo $teacher;
+    // echo $teacher;
+    $teacherName = $teacher;
     // $query = "SELECT question , answer FROM answer  where teacher='$teacher' GROUP BY question";  
     $query = "SELECT question , avg( answer ) as avg_ans FROM answer where teacher='$teacher'  GROUP BY question";  
 
@@ -93,9 +94,9 @@ if (isset($_SESSION['user_id'])) {
                           ?>  
                           
         ]);
-
+                          var teacher = <?php echo json_encode("Teacher Name  : ".$teacherName); ?>;
         var options = {
-          title: 'Company Performance',
+          title: teacher,
           curveType: 'function',
           legend: { position: 'bottom' }
         };
