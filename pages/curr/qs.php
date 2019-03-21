@@ -37,7 +37,10 @@ $logout='href="../../logout.php"';
 $img='src="../../dist/img/user2-160x160.jpg"';
 
 //   -----------------------------------------------------------------//
-
+$teacher='class=""';
+$teacher_href='href="../../pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="../../pages/feedback/question.php"';
 
 // class for active
 

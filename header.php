@@ -121,6 +121,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          <li <?php echo $teacher ?> ><a <?php echo $teacher_href ?>><i class="fa fa-circle-o"></i> Add Teacher</a></li>
+          <li <?php echo $question ?> ><a <?php echo $question_href ?>><i class="fa fa-circle-o"></i> Add Question</a></li>
             <li <?php echo $feed ?> ><a <?php echo $feedback_href ?>><i class="fa fa-circle-o"></i> Feedback</a></li>
 
            </ul>

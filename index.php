@@ -1,7 +1,7 @@
 <?php
        $img='src="dist/img/user2-160x160.jpg"';
        $index='href="index.php"';
-$logout='href="logout.php"';
+       $logout='href="logout.php"';
 
        //   -----------------------------------------------------------------//
        
@@ -10,7 +10,10 @@ $logout='href="logout.php"';
        
        
        
-       
+       $teacher='class=""';
+$teacher_href='href="pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="pages/feedback/question.php"';
        
        $dashboard = 'class="active"'; //dashboard
        

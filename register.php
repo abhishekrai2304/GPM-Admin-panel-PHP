@@ -2,10 +2,8 @@
 if(isset($_POST['register'])){
 
 
-    // $target = "./pdf/ansari".basename($_FILES['filename']['name']);
 
     $db = mysqli_connect("localhost","root","","GPM");
-    // $filename = $_FILES['filename']['name'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -41,13 +39,6 @@ if(isset($_POST['register'])){
   <!-- iCheck -->
   <link rel="stylesheet" href="  plugins/iCheck/square/blue.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -109,10 +100,7 @@ if(isset($_POST['register'])){
       </div>
     
 
-      <!-- <div class="form-group has-feedback">
-        <input type="text" class="form-control" id="contact" placeholder="Contact No." >
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div> -->
+      
 
       <div class="row">
       
@@ -126,7 +114,6 @@ if(isset($_POST['register'])){
 
  
 
-    <!-- <a href="login.html" class="text-center">I already have a membership</a> -->
   </div>
   <!-- /.form-box -->
 </div>
@@ -195,14 +182,6 @@ else if(pass != repass){
      $("#repass").after(alert('password doesnt match'));
             hasError = true;
 }
-// else if(contact == ''){
-//      $("#contact").after(alert('Please enter the Contact Number'));
-//             hasError = true;
-// }
-// else if(!conReg.test(contact)){
-//      $("#contact").after(alert('Please enter the valid Contact Number'));
-//             hasError = true;
-// }
 
 
         if(hasError == true) { return false; }

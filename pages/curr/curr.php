@@ -82,6 +82,11 @@ $TT_href='href="../../pages/curr/TT.php"';
 $TT= 'class=""';
 $qs_href='href="../../pages/curr/qs.php"';
 $qs= 'class=""';
+
+$teacher='class=""';
+$teacher_href='href="../../pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="../../pages/feedback/question.php"';
 session_start();
 if (isset($_SESSION['user_id'])) {
   // logged in

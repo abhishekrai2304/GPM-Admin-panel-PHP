@@ -11,7 +11,10 @@ $index='href="../../index.php"';
 // class for active
 
 
-
+$teacher='class=""';
+$teacher_href='href="../../pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="../../pages/feedback/question.php"';
 
 
 $dashboard = 'class=""'; //dashboard

@@ -78,10 +78,7 @@ if(isset($_POST["login"])) {
     </form>
    
    
-    <!-- /.social-auth-links -->
-
-    <!-- <a href="register.html" class="text-center">Register a new membership</a> -->
-
+   
   </div>
   <!-- /.login-box-body -->
 </div>
@@ -101,39 +98,6 @@ if(isset($_POST["login"])) {
       increaseArea: '20%' /* optional */
     });
   });
-
-//   $(document).ready(function() { 
-//  
-//     $('#btn-submit').click(function() {  
-//  
-//         $(".error").hide();
-//         var hasError = false;
-//     
-
-//         var emailaddressVal = $("#UserEmail").val();
-//         var pass = $("#pass").val();
-
-
-
-//         if(emailaddressVal == '') {
-//             $("#UserEmail").after(alert('Please enter your email address'));
-//             hasError = true;
-//         }
-//  
-
-
-// else if(pass == ''){
-//      $("#pass").after(alert('Please enter the password'));
-//             hasError = true;
-// }
-
-
-
-        
-//         if(hasError == true) { return false; }
-//  
-//     });
-// });
 
 </script>
 </body>

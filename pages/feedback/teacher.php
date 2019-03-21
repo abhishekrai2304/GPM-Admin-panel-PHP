@@ -1,33 +1,32 @@
 
-
 <?php
 
+if(isset($_POST['upload'])){
 
 
-session_start();
 
-// Create connection
-$conn = mysqli_connect('localhost', 'root', '','gpm');
-$filter=mysqli_query($conn,"select teacher from teacher");
+    $db = mysqli_connect("localhost","root","","GPM");
+    // $filename = $_FILES['filename']['name'];
+    $name = $_POST['name'];
+ 
 
-if(isset($_POST['submit'])){
-    $_SESSION['teacher'] = $_POST['teacher'];
-    header('Location: feedback.php');
+    $sql = "INSERT INTO teacher (teacher) VALUES ('$name')";
 
-    echo $_POST['teacher'];
-}
-   
+    mysqli_query($db,$sql);
+    // move_uploaded_file($_FILES['image']['tmp_name'],$target);
+  
+    // header("refresh:2; url=principal_desk.php")
+
+
+  }
 $index='href="../../index.php"';
-
 $logout='href="../../logout.php"';
 $img='src="../../dist/img/user2-160x160.jpg"';
 
+
 //   -----------------------------------------------------------------//
 
-$teacher='class=""';
-$teacher_href='href="../../pages/feedback/teacher.php"';
-$question='class=""';
-$question_href='href="../../pages/feedback/question.php"';
+
 // class for active
 
 
@@ -47,7 +46,7 @@ $ln= 'class=""';
 $sc= 'class=""';
 $cep= 'class=""';
 $tender= 'class=""';
-$graph='class=""';
+
 //   -----------------------------------------------------------------//
 
 
@@ -63,20 +62,25 @@ $ln_href='href="../../pages/notices/ln.php"';
 $sc_href='href="../../pages/notices/sc.php"';
 $cep_href='href="../../pages/notices/cep.php"';
 $tender_href='href="../../pages/notices/tender.php"';
-$graph_href='href="../../pages/feedback/graph.php"';
+
 $feedback_href='href="../../pages/feedback/graph.php"';
 $feedback='class="treeview active"';
-$feed= 'class="active"';
-
+$feed= 'class=""';
 $TT_href='href="../../pages/curr/TT.php"';
 $TT= 'class=""';
-
 $qs_href='href="../../pages/curr/qs.php"';
 $qs= 'class=""';
+
+$teacher='class="active"';
+$teacher_href='href="../../pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="../../pages/feedback/question.php"';
+session_start();
 if (isset($_SESSION['user_id'])) {
   // logged in
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -197,29 +201,18 @@ include "../../header.php"
         <div class="box box-primary">
            
 
-            <form method="POST" name="submitSear" id="submitSear" action="graph.php" enctype="multipart/form-data" >
+            <form method="POST" name="submitSear" id="submitSear" action="teacher.php" enctype="multipart/form-data" >
             <div class="box-body">
 
-    
+
 
               <div class="form-group">
-                  <label>link</label>
-                  <select  class="form-control" name="teacher" >
-                  <!-- <option>namrata</option> -->
-                  <?php
-
-// Add options to the drop down
-while($row = mysqli_fetch_array($filter))
-{
-  echo "<option name='teacher' >" . $row['teacher'] . "</option>";
-}
-?>
-                  </select>
+                  <label>Teacher</label>
+                  <input type="text" class="form-control" name="name" placeholder="Teacher ...">
                 </div>
-                
+      
+       
 
-  
-           
                 
               
              
@@ -227,26 +220,24 @@ while($row = mysqli_fetch_array($filter))
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="upload" class="btn btn-primary">Submit</button>
               </div>          
            </form>
            <!-- /.box-header -->
            <!-- form start -->
-          
+           <div class="box-body" >
+                
+           <div class="form-group">
 
-       <!-- <div class="box-body" >
-       <div class="form-group">
-                  <label>verified student</label>
-                </div> 
-<div class="form-group">
+           <div id="grid_table_vission">
+           </div>
 
-<div id="grid_cons_verify">
-</div>
+           
+         </div>
 
+        </div>
 
-</div>
-
-</div> -->
+   
         </div>
       
       </div>
@@ -288,28 +279,28 @@ include "../../footer.php"
    loadData: function(filter){
     return $.ajax({
      type: "GET",
-     url: "fetch_data.php",
+     url: "fetch_dataT.php",
      data: filter
     });
    },
    insertItem: function(item){
     return $.ajax({
      type: "POST",
-     url: "fetch_data.php",
+     url: "fetch_dataT.php",
      data:item
     });
    },
    updateItem: function(item){
     return $.ajax({
      type: "PUT",
-     url: "fetch_data.php",
+     url: "fetch_dataT.php",
      data: item
     });
    },
    deleteItem: function(item){
     return $.ajax({
      type: "DELETE",
-     url: "fetch_data.php",
+     url: "fetch_dataT.php",
      data: item
     });
    },
@@ -320,27 +311,15 @@ include "../../footer.php"
    {
     name: "id",
  type: "text",
- css: ''
+//  css: ''
    },
    {
-    name: "name",
- type: "text",
- css: ''
-   },
-   {
-    name: "link", 
+    name: "teacher", 
  type: "text", 
  width: 150, 
  validate: "required"
    },
-   
-   {
-    name: "filename", 
- type: "text", 
- width: 150, 
- validate: "required"
- 
-   },
+  
  
    {
     type: "control"
@@ -352,95 +331,7 @@ include "../../footer.php"
 </script>
 
 
-<!-- <script>
- 
- $('#grid_cons_verify').jsGrid({
 
-  width: "100%",
-  height: "600px",
-
-  filtering: true,
-  inserting:true,
-  editing: true,
-  sorting: true,
-  paging: true,
-  autoload: true,
-  pageSize: 10,
-  pageButtonCount: 5,
-  deleteConfirm: "Do you really want to delete data?",
-
-  controller: {
-   loadData: function(filter){
-    return $.ajax({
-     type: "GET",
-     url: "fetch_verify_data.php",
-     data: filter
-    });
-   },
-   insertItem: function(item){
-    return $.ajax({
-     type: "POST",
-     url: "fetch_verify_data.php",
-     data:item
-    });
-   },
-   updateItem: function(item){
-    return $.ajax({
-     type: "PUT",
-     url: "fetch_verify_data.php",
-     data: item
-    });
-   },
-   deleteItem: function(item){
-    return $.ajax({
-     type: "DELETE",
-     url: "fetch_verify_data.php",
-     data: item
-    });
-   },
-   
-  },
-
-  fields: [
-   {
-    name: "id",
- type: "text",
- css: ''
-   },
-   {
-    name: "name", 
- type: "text", 
- width: 150, 
- validate: "required"
-   },
-   {
-    name: "email", 
- type: "text", 
- width: 150, 
- validate: "required"
-   },
-   {
-    name: "enroll", 
- type: "text", 
- width: 150, 
- validate: "required"
-   },
-   {
-    name: "filename", 
- type: "text", 
- width: 150, 
- validate: "required"
- 
-   },
- 
-   {
-    type: "control"
-   }
-  ]
-
- });
-
-</script> -->
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

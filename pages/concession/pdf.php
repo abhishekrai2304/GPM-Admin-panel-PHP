@@ -11,7 +11,10 @@ $img='src="../../dist/img/user2-160x160.jpg"';
 
 
 // class for active
-
+$teacher='class=""';
+$teacher_href='href="../../pages/feedback/teacher.php"';
+$question='class=""';
+$question_href='href="../../pages/feedback/question.php"';
 
 
 $dashboard = 'class=""'; //dashboard
